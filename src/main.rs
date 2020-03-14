@@ -3,8 +3,8 @@
 /// The player has 5 chances to guess a
 /// random number
 
-use guessing_game::engine;
+mod engine;
 
 fn main() {
-    game::play_game()
+    engine::play_game()
 }
