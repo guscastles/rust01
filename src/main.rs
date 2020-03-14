@@ -6,5 +6,5 @@
 mod engine;
 
 fn main() {
-    engine::play_game()
+    engine::play()
 }
