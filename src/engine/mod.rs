@@ -22,16 +22,20 @@ fn secret_number() -> i32 {
 }
 
 fn play(secret: i32, counter: u32) -> u32 {
-    let mut guess = String::new();
-    io::stdin().read_line(&mut guess).
-        expect("Failed to read a number");
-    let guess_as_int: i32 = match guess.trim().parse::<i32>() {
-        Ok(num) => num,
-        Err(_) => 0,
-    };
-    if secret != guess_as_int && counter < (END_GAME - 1) {
+    let guess = read_new_number();
+    if secret != guess && counter < (END_GAME - 1) {
         println!("Please, try again :)");
         return counter + 1;
     }
     return END_GAME;
+}
+
+fn read_new_number() -> i32 {
+    let mut guess = String::new();
+    io::stdin().read_line(&mut guess).
+        expect("Failed to read a number");
+    return match guess.trim().parse::<i32>() {
+        Ok(num) => num,
+        Err(_) => 0,
+    };
 }
