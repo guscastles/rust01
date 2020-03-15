@@ -44,3 +44,16 @@ fn read_new_number() -> u32 {
         Err(_) => NOT_IN_SCOPE,
     };
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn check_secret_number() {
+        let secret = secret_number();
+        for _ in 0..999 {
+            assert!(secret > 0 && secret < 11);
+        }
+    }
+}
