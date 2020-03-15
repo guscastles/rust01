@@ -15,7 +15,7 @@ pub fn play() {
 }
 
 fn secret_number() -> u32 {
-    return rand::thread_rng().gen_range(1, 11);
+    rand::thread_rng().gen_range(1, 11)
 }
 
 fn run(secret: u32) {
@@ -31,17 +31,17 @@ fn check_guess(secret: u32, counter: u32) -> u32 {
         messages::try_again();
         return counter + 1;
     }
-    return END_GAME;
+    END_GAME
 }
 
 fn read_new_number() -> u32 {
     let mut guess = String::new();
     io::stdin().read_line(&mut guess).
         expect(messages::READ_FAILURE);
-    return match guess.trim().parse::<i32>() {
+    match guess.trim().parse::<i32>() {
         Ok(num) => num.try_into().unwrap(),
         Err(_) => NOT_IN_SCOPE,
-    };
+    }
 }
 
 #[cfg(test)]
