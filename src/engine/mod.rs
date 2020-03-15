@@ -12,7 +12,6 @@ pub fn play() {
     let secret = secret_number();
     run(secret);
     messages::final_message(secret);
-
 }
 
 fn secret_number() -> u32 {
