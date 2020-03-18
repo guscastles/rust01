@@ -25,6 +25,7 @@ checksum = "a06f77d526c1a601b7c4cdd98f54b5eaabffc14d5f2f0296febdc7f357c6d3ba"
 name = "guessing_game"
 version = "0.1.0"
 dependencies = [
+ "newmath",
  "rand",
 ]
 
@@ -33,6 +34,10 @@ name = "libc"
 version = "0.2.67"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "eb147597cdf94ed43ab7a9038716637d2d1bf2bc571da995d0028dec06bd3018"
+
+[[package]]
+name = "newmath"
+version = "0.1.0"
 
 [[package]]
 name = "rand"
